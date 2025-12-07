@@ -31,15 +31,8 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           editUrl:
-            "https://github.com/mansoor1123456/physical-ai-robotics-book/tree/main/",
+            "https://github.com/mansoor1123456/physical-ai-robotics-book/tree/main/docs/",
         },
-        // ✅ Optional: comment/remove blog to avoid broken link
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: { type: ["rss", "atom"], xslt: true },
-        //   editUrl:
-        //     "https://github.com/mansoor1123456/physical-ai-robotics-book/tree/main/",
-        // },
         theme: { customCss: "./src/css/custom.css" },
       } satisfies Preset.Options,
     ],
@@ -58,7 +51,7 @@ const config: Config = {
           position: "left",
           label: "Chapters",
         },
-        // ✅ Removed /blog to avoid broken links
+        // blog removed to avoid broken links
         // { to: "/blog", position: "left" },
       ],
     },
@@ -97,8 +90,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,  // Redeploy trigger comment
-
+  } satisfies Preset.ThemeConfig,
 };
 
 export default config;
