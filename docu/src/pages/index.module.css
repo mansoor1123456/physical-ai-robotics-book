@@ -1,0 +1,36 @@
+/* Hero banner */
+.heroBanner {
+  background-color: #0b4d84;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.heroBanner .button {
+  margin-top: 1.5rem;
+}
+
+.startButton {
+  background-color: #de8533ff; /* normal color */
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.startButton:hover {
+  background-color: #ff9f33; /* hover color */
+  transform: scale(1.05); /* slight zoom on hover */
+  cursor: pointer;
+}
+
+
+
+
