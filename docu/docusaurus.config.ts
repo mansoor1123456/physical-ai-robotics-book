@@ -9,7 +9,7 @@ const config: Config = {
 
   future: { v4: true },
 
-  url: "https://physical-ai-robotics-book-six.vercel.app",
+  url: "https://physical-ai-robotics-book-z76b-mr0rtsdnr.vercel.app",
   baseUrl: "/",
   organizationName: "mansoor1123456",
   projectName: "physical-ai-robotics-book",
