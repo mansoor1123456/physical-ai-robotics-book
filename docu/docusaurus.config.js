@@ -1,8 +1,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
 
-const config: Config = {
+const config = {
   title: "Physical AI & Humanoid Robotics",
   tagline: "The future of work with AI and robots",
   favicon: "img/favicon.ico",
@@ -17,18 +15,21 @@ const config: Config = {
   markdown: { hooks: { onBrokenMarkdownLinks: "ignore" } },
   onBrokenLinks: "ignore",
 
-  i18n: { defaultLocale: "en", locales: ["en"] },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
 
   presets: [
     [
       "classic",
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.ts"),
+          sidebarPath: require.resolve("./sidebars.js"),
           editUrl: undefined,
         },
         theme: { customCss: require.resolve("./src/css/custom.css") },
-      } satisfies Preset.Options,
+      },
     ],
   ],
 
@@ -53,7 +54,7 @@ const config: Config = {
     },
 
     prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
-  } satisfies Preset.ThemeConfig,
+  },
 };
 
 export default config;
