@@ -9,24 +9,42 @@ import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <header className={clsx("hero", styles.heroBanner)}>
       <div className="container flex flex-col md:flex-row items-center justify-between">
-        {/* Left: Text */}
+        {/* LEFT TEXT AREA */}
         <div
-          className="md:w-1/2 text-center md:text-left space-y-6"
+          className="md:w-1/2 text-center md:text-left space-y-6 px-4"
           style={{
             marginTop: "-200px",
             marginLeft: "0px",
             marginRight: "350px",
           }}
         >
-          <Heading as="h1" className="hero__title">
+          {/* MAIN HEADING */}
+          <Heading
+            as="h1"
+            className="hero__title text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight break-words"
+            style={{
+              maxWidth: "100%",
+            }}
+          >
             {siteConfig.title}
           </Heading>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
 
-          <div className={styles.buttons}>
+          {/* SUB HEADING */}
+          <p
+            className="hero__subtitle text-base sm:text-lg md:text-xl lg:text-2xl leading-snug break-words"
+            style={{
+              maxWidth: "100%",
+            }}
+          >
+            {siteConfig.tagline}
+          </p>
+
+          {/* BUTTON */}
+          <div className="mt-4 flex justify-center md:justify-start">
             <Link
               className={`button button--lg ${styles.startButton}`}
               to="/docs/intro"
@@ -36,29 +54,59 @@ function HomepageHeader() {
           </div>
         </div>
 
-        {/* Right: Robot Image */}
-        <div style={{ position: "relative", width: "100%" }}>
+        {/* RIGHT: ROBOT IMAGE */}
+        <div className="w-full md:w-1/2 mt-8 md:mt-0 relative flex justify-center md:justify-end">
           <img
             src="/img/robot.png"
             alt="Physical AI Robot"
+            className="object-contain drop-shadow-2xl"
             style={{
               width: "400px",
-              height: "auto",
               maxWidth: "100%",
+              height: "auto",
               position: "absolute",
-              right: "0",
-              top: "-300px",
+              right: "80px",
+              top: "55px",
             }}
-            className="object-contain drop-shadow-2xl"
           />
         </div>
       </div>
+
+      {/* MOBILE RESPONSIVE OVERRIDES */}
+      <style>
+        {`
+          @media (max-width: 854px) {
+            .hero__title, .hero__subtitle {
+              text-align: center !important;
+            }
+            .container > div:first-child {
+              margin-top: 0 !important;
+              margin-right: 0 !important;
+            }
+            .container > div:last-child img {
+              position: relative !important;
+              right: auto !important;
+              top: 0 !important;
+              margin: 0 auto !important;
+            }
+          }
+          @media (max-width: 480px) {
+            .hero__title {
+              font-size: 2rem !important;
+            }
+            .hero__subtitle {
+              font-size: 1rem !important;
+            }
+          }
+        `}
+      </style>
     </header>
   );
 }
 
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout
       title={`Welcome to ${siteConfig.title}`}
@@ -66,7 +114,7 @@ export default function Home(): ReactNode {
     >
       <HomepageHeader />
 
-      {/* -------------------- CUSTOM FOOTER -------------------- */}
+      {/* FOOTER */}
       <footer
         style={{
           backgroundColor: "var(--ifm-background-color)",
@@ -103,7 +151,6 @@ export default function Home(): ReactNode {
           </a>
         </p>
       </footer>
-      {/* -------------------------------------------------------------- */}
     </Layout>
   );
 }
