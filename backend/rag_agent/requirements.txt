@@ -1,0 +1,6 @@
+ fastapi
+ openai
+ qdrant-client
+ python-dotenv
+ uvicorn
+ pydantic
