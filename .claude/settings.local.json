@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(bash:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -RequireTasks -IncludeTasks)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json)",
+      "Bash(powershell -Command \"Invoke-RestMethod -Uri http://localhost:8000/ -Method Get\")"
     ],
     "deny": [],
     "ask": []

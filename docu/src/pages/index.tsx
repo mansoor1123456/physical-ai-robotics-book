@@ -5,6 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 
+import FloatingChatbot from "../components/FloatingChatbot";
 import styles from "./index.module.css";
 
 function HomepageHeader() {
@@ -151,6 +152,9 @@ export default function Home(): ReactNode {
           </a>
         </p>
       </footer>
+
+      {/* Floating RAG Chatbot */}
+      <FloatingChatbot />
     </Layout>
   );
 }
